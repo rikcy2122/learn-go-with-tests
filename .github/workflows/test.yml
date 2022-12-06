@@ -5,13 +5,12 @@ name: Go
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
 
 jobs:
-
-  build:
+  Test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
