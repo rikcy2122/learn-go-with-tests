@@ -7,21 +7,23 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	repeated := Repeat("a", 5)
-	expected := "aaaaa"
+	t.Run("check operation", func(t *testing.T) {
+		repeated := Repeat("a", 5)
+		expected := "aaaaa"
 
-	if repeated != expected {
-		t.Errorf("expected %q but got %q", expected, repeated)
-	}
-}
+		if repeated != expected {
+			t.Errorf("expected %q but got %q", expected, repeated)
+		}
+	})
 
-func TestRepeatCount(t *testing.T) {
-	count := strings.Count(Repeat("a", 5), "a")
-	expected := 5
+	t.Run("check count", func(t *testing.T) {
+		count := strings.Count(Repeat("a", 5), "a")
+		expected := 5
 
-	if count != expected {
-		t.Errorf("expected %d but got %d", count, expected)
-	}
+		if count != expected {
+			t.Errorf("expected %d but got %d", count, expected)
+		}
+	})
 }
 
 func BenchmarkRepeat(b *testing.B) {
