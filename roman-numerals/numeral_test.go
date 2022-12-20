@@ -74,9 +74,9 @@ func TestPropertiesOfConversion(t *testing.T) {
 		return fromRoman == arabic
 	}
 
-	if err := quick.Check(assertion, &quick.Config{
-		MaxCount: 10000,
-	}); err != nil {
+	if err := quick.Check(assertion, /*&quick.Config{
+			MaxCount: 100,
+		}*/nil); err != nil {
 		t.Error("failed checks", err)
 	}
 }
